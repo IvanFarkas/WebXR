@@ -3,7 +3,7 @@
  */
 
 var APP = {
-	Player: function () {
+	Player: () => {
 		var renderer = new THREE.WebGLRenderer({ antialias: true });
 		renderer.setPixelRatio(window.devicePixelRatio);
 		renderer.outputEncoding = THREE.sRGBEncoding;
@@ -158,7 +158,7 @@ var APP = {
 			prevTime = time;
 		}
 
-		this.play = function () {
+		this.play = () => {
 			if (renderer.xr.enabled) {
 				dom.append(vrButton);
 			}
@@ -179,7 +179,7 @@ var APP = {
 			renderer.setAnimationLoop(animate);
 		};
 
-		this.stop = function () {
+		this.stop = () => {
 			if (renderer.xr.enabled) {
 				vrButton.remove();
 			}
@@ -198,16 +198,14 @@ var APP = {
 			renderer.setAnimationLoop(null);
 		};
 
-		this.dispose = function () {
+		this.dispose = () => {
 			renderer.dispose();
 
 			camera = undefined;
 			scene = undefined;
 		};
 
-		//
-
-		function onDocumentKeyDown(event) {
+    function onDocumentKeyDown(event) {
 			dispatch(events.keydown, event);
 		}
 

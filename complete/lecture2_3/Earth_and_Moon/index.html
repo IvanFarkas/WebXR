@@ -30,7 +30,7 @@
     window.VRButton = VRButton; // Used by APP Scripts.
 
     var loader = new THREE.FileLoader();
-    loader.load('app.json', function (text) {
+    loader.load('app.json', (text) => {
       var player = new APP.Player();
       player.load(JSON.parse(text));
       player.setSize(window.innerWidth, window.innerHeight);
@@ -38,7 +38,7 @@
 
       document.body.appendChild(player.dom);
 
-      window.addEventListener('resize', function () {
+      window.addEventListener('resize', () => { 
         player.setSize(window.innerWidth, window.innerHeight);
       });
     });

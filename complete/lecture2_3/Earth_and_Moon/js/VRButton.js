@@ -41,15 +41,15 @@ var VRButton = {
 
 			button.textContent = "ENTER VR";
 
-			button.onmouseenter = function () {
+			button.onmouseenter = () => {
 				button.style.opacity = "1.0";
 			};
 
-			button.onmouseleave = function () {
+			button.onmouseleave = () => {
 				button.style.opacity = "0.5";
 			};
 
-			button.onclick = function () {
+			button.onclick = () => {
 				if (currentSession === null) {
 					// WebXR's requestReferenceSpace only works if the corresponding feature
 					// was requested at session creation time. For simplicity, just ask for

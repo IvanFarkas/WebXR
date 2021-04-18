@@ -110,7 +110,7 @@ class App {
 			const mesh = self.buildController.call(self, event.data);
 			this.add(mesh);
 		});
-		this.controller1.addEventListener("disconnected", function () {
+		this.controller1.addEventListener("disconnected", () => {
 			this.remove(this.children[0]);
 		});
 		this.scene.add(this.controller1);
@@ -122,7 +122,7 @@ class App {
 			const mesh = self.buildController.call(self, event.data);
 			this.add(mesh);
 		});
-		this.controller2.addEventListener("disconnected", function () {
+		this.controller2.addEventListener("disconnected", () => {
 			this.remove(this.children[0]);
 		});
 		this.scene.add(this.controller2);

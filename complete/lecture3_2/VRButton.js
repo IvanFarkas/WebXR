@@ -67,27 +67,25 @@ class VRButton {
 			currentSession = null;
 		}
 
-		//
-
 		button.style.display = "";
 		button.style.right = "20px";
 		button.style.width = "80px";
 		button.style.cursor = "pointer";
 		button.innerHTML = '<i class="fas fa-vr-cardboard"></i>';
 
-		button.onmouseenter = function () {
+		button.onmouseenter = () => {
 			button.style.fontSize = "12px";
 			button.textContent = currentSession === null ? "ENTER VR" : "EXIT VR";
 			button.style.opacity = "1.0";
 		};
 
-		button.onmouseleave = function () {
+		button.onmouseleave = () => {
 			button.style.fontSize = "30px";
 			button.innerHTML = '<i class="fas fa-vr-cardboard"></i>';
 			button.style.opacity = "0.5";
 		};
 
-		button.onclick = function () {
+		button.onclick = () => {
 			if (currentSession === null) {
 				// WebXR's requestReferenceSpace only works if the corresponding feature
 				// was requested at session creation time. For simplicity, just ask for
